@@ -17,15 +17,13 @@ firebase_admin.initialize_app(cred, {
     'storageBucket': ""
 })
 
+bucket = storage.bucket()
 
-bucket = storage.bucket() 
-
-cap = cv2.VideoCapture(0)
+cap = cv2.VideoCapture(1)
 cap.set(3, 640)
 cap.set(4, 480)
 
 imgBackground = cv2.imread('Resources/background.png')
-
 
 # Importing the mode images into a list
 folderModePath = 'Resources/Modes'
@@ -44,7 +42,7 @@ encodeListKnown, studentIds = encodeListKnownWithIds
 # print(studentIds)
 print("Encode File Loaded")
 
-modeType = 0 
+modeType = 0
 counter = 0
 id = -1
 imgStudent = []

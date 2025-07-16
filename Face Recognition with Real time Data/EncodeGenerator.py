@@ -1,8 +1,8 @@
+
 import cv2
 import face_recognition
 import pickle
 import os
-import storage
 import firebase_admin
 from firebase_admin import credentials
 from firebase_admin import db
@@ -29,8 +29,10 @@ for path in pathList:
     bucket = storage.bucket()
     blob = bucket.blob(fileName)
     blob.upload_from_filename(fileName)
-    print(path)
-    print(os.path.splitext(path)[0])
+
+
+    # print(path)
+    # print(os.path.splitext(path)[0])
 print(studentIds)
 
 
